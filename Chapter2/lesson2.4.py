@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QAction, QApplication
+from PyQt5.QtWidgets import QMainWindow, QAction, QApplication,QMenu
 
 
 class Example(QMainWindow):
@@ -15,6 +15,19 @@ class Example(QMainWindow):
         self.statusbar.showMessage('Ready')
 
         menubar = self.menuBar()
+        fileMenu = menubar.addMenu('File')
+
+        impMenu = QMenu('Import', self)
+        impAct = QAction('Import mail', self)
+        impAct.setStatusTip('File Ready')
+        impMenu.addAction(impAct)
+
+        newAct = QAction('New', self)
+
+        fileMenu.addAction(newAct)
+        fileMenu.addMenu(impMenu)
+
+
         viewMenu = menubar.addMenu('View')
 
         viewStatAct = QAction('View statusbar', self, checkable=True)
