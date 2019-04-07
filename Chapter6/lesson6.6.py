@@ -13,7 +13,7 @@ class Example(QWidget):
 
     def initUI(self):
         hbox = QHBoxLayout(self)
-        pixmap = QPixmap("redrock.png")
+        pixmap = QPixmap("../res/web.jpg")
 
         lbl = QLabel(self)
         lbl.setPixmap(pixmap)
